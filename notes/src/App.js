@@ -64,7 +64,6 @@ function App() {
       body: "",
       user_id: userId,
     };
-    console.log("User ID before adding note:", userId);
     try {
       const response = await fetch("http://localhost:5000/api/notes", {
         method: "POST",

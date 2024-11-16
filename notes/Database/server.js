@@ -92,14 +92,14 @@ app.delete("/api/notes/:id", (req, res) => {
 
 // // Start the server
 app.post("/api/notes", (req, res) => {
-  const userId = localStorage.getItem("user_id");
+  // const userId = localStorage.getItem("user_id");
   const { user_id, title, body } = req.body;
-  console.log("User ID before adding note:", userId);
   db.run(
     "INSERT INTO Note (user_id, title, body) VALUES (?, ?, ?)",
     [user_id, title, body],
     function (err) {
       if (err) {
+        console.log("Error");
         return res.status(500).json({ error: err.message });
       }
       res.status(201).json({ id: this.lastID, user_id, title, body });
@@ -119,6 +119,7 @@ app.post("/api/notes", (req, res) => {
 
 app.get("/api/notes", (req, res) => {
   const userId = req.query.user_id;
+  console.log(userId);
   db.all("SELECT * FROM Note WHERE user_id = ?", [userId], (err, rows) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -174,8 +175,8 @@ app.post("/api/login", (req, res) => {
         // Login successful, return the user_id
         // localStorage.setItem("user_id", row.id);
         // console.log(row.id);
-        const test = localStorage.getItem("user_id");
-        console.log(test);
+        // const test = localStorage.getItem("user_id");
+        // console.log(test);
         res.status(200).json({ message: "Login successful", userId: row.id });
       } else {
         console.log("FAilerrrrrrrrrrrrrrrrrrrrrrrrrrr");
