@@ -14,7 +14,6 @@ function App() {
 
   const onLogin = (isLoggedIn, id) => {
     setIsLoggedIn(isLoggedIn);
-    // localStorage.setItem("user_id", id); // Store user_id in localStorage
     setUserId(id);
   };
 

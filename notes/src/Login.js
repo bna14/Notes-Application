@@ -18,7 +18,6 @@ function Login({ onLogin, onShowSignup }) {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("user_id", data.userId); // Store user_id from server response
-        alert(data.userId);
         onLogin(true); // Call onLogin to log in the user
         console.log("Login successful:", data);
       } else {
