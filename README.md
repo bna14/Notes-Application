@@ -2,7 +2,7 @@
 ![Screenshot 2024-11-24 092614](https://github.com/user-attachments/assets/90d75a60-18a6-432f-822f-537f2b8fb8be)
 ![Screenshot 2024-11-24 092702](https://github.com/user-attachments/assets/0ef04aee-5e9b-4a1d-9b0a-3f2fdb13f237)
 ![Screenshot 2024-11-24 092800](https://github.com/user-attachments/assets/8ea5aaac-97c2-4e5b-a9be-cf048ea16e51)
-
+ 
 Make sure to have node and npm installed.
 Steps to run the application:
 1- Clone the repository
