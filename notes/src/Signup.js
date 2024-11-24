@@ -8,7 +8,7 @@ function Signup({ onSignup }) {
   // Function to send signup request
   async function handleSignupRequest(username, password, email) {
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch("https://notes-application-x57d.onrender.com/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, email }),
