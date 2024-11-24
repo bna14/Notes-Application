@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     if (userId) {
-      fetch(`http://localhost:5000/api/notes?user_id=${userId}`)
+      fetch(`https://notes-application-x57d.onrender.com/api/notes?user_id=${userId}`)
         .then((response) => response.json())
         .then((data) => setNotes(data))
         .catch((error) => console.error("Error fetching notes:", error));
@@ -65,7 +65,7 @@ function App() {
     };
     console.log("User ID before adding note:", userId);
     try {
-      const response = await fetch("http://localhost:5000/api/notes", {
+      const response = await fetch("https://notes-application-x57d.onrender.com/api/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +82,7 @@ function App() {
 
   const onDeleteNote = async (idToDelete) => {
     try {
-      await fetch(`http://localhost:5000/api/notes/${idToDelete}`, {
+      await fetch(`https://notes-application-x57d.onrender.com/api/notes/${idToDelete}`, {
         method: "DELETE",
       });
       setNotes(notes.filter((note) => note.id !== idToDelete));
@@ -100,7 +100,7 @@ function App() {
     });
     setNotes(updatedNotesArr);
 
-    fetch(`http://localhost:5000/api/notes/${updatedNote.id}`, {
+    fetch(`https://notes-application-x57d.onrender.com/api/notes/${updatedNote.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
